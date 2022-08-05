@@ -1,4 +1,32 @@
 extends ./layout/index
 
 block contenido
-    p Nosotros
+    main.container.mt-5
+        .row    
+            .col-md-5 
+                img(src="img/nosotros.jpg", alt="Imagen sobre Nosotros", class ="img-fluid")
+            .col-md-7
+                h1 #{pagina}  
+                
+                blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo condimentum sem, sit amet luctus risus ornare nec. Vivamus metus tortor, cursus vulputate dapibus quis, elementum eu metus. Pellentesque urna velit, facilisis non suscipit in, aliquam efficitur felis. Phasellus mattis mauris dolor, vitae hendrerit nulla molestie sit amet. Pellentesque et imperdiet libero.
+
+                p Vivamus imperdiet mollis sagittis. Donec eget massa diam. Nunc viverra odio at lacus porttitor gravida. Duis sollicitudin enim ac felis rutrum, ut tincidunt sem tincidunt. Nulla sed erat nunc. Nunc congue, odio in efficitur pharetra, dui est bibendum dolor, sed finibus felis enim eget dui. Maecenas tincidunt in tortor at consequat. Aliquam convallis ex ut nulla aliquet, at convallis ligula iaculis.
+
+                p Sed pellentesque a ex eget lacinia. Fusce quis nisi libero. Morbi dignissim quam in enim dapibus viverra. Curabitur sit amet justo mi. Proin efficitur mi ac lorem posuere, in fringilla purus mollis. Quisque lacinia libero eget gravida consequat. Curabitur ut est commodo, accumsan lacus sed, consectetur libero. Vestibulum ac risus non enim placerat vestibulum.. 
+    .listado-iconos
+        .container.mt-5.py-5.text-center
+            .row    
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", alt="icono seguridad", class="img-fluid mb-4")
+                    h2.mb-4 Seguridad 
+                    p Pellentesque urna velit, facilisis non suscipit in, aliquam efficitur felis. Phasellus mattis mauris dolor, vitae hendrerit nulla molestie sit amet. Pellentesque et imperdiet libero. 
+                
+                .col-md-4
+                    img(src="img/icono_destinos.svg", alt="icono destinos", class="img-fluid mb-4")
+                    h2.mb-4 Destinos Increibles 
+                    p Pellentesque urna velit, facilisis non suscipit in, aliquam efficitur felis. Phasellus mattis mauris dolor, vitae hendrerit nulla molestie sit amet. Pellentesque et imperdiet libero. 
+                
+                .col-md-4
+                    img(src="img/icono_precio.svg", alt="icono precios", class="img-fluid mb-4")
+                    h2.mb-4 Mejores Precios 
+                    p Pellentesque urna velit, facilisis non suscipit in, aliquam efficitur felis. Phasellus mattis mauris dolor, vitae hendrerit nulla molestie sit amet. Pellentesque et imperdiet libero. 
