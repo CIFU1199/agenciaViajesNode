@@ -1,4 +1,5 @@
-import {Viajes} from '../models/Viaje.js'
+import {Viaje} from '../models/Viaje.js'
+import {Testimonial} from '../models/Testimoniales.js'
  
 const paginaInicio = (req,res)=>{ // req - lo que enviamos || res - lo que express nos responde 
     res.render('inicio',{
@@ -7,31 +8,59 @@ const paginaInicio = (req,res)=>{ // req - lo que enviamos || res - lo que expre
 }
 
 const paginaNosotros = (req,res)=>{ // req - lo que enviamos || res - lo que express nos responde
-    res.render('nosotros',{
+    res.render('nosotros',{ 
         pagina: 'Nosotros'
     });
 }
 
 const paginaViajes = async(req,res)=>{ // req - lo que enviamos || res - lo que express nos responde
 
-    const viajes = await Viajes.findAll();
+    const viajes = await Viaje.findAll();
 
     console.log(viajes); 
 
     res.render('viajes',{
-        pagina:'Viajes'
+        pagina:'Próximos Viajes',
+        viajes,
     });
 }
 
-const paginaTestimoniales = (req,res)=>{ // req - lo que enviamos || res - lo que express nos responde
-    res.render('testimoniales',{
-        pagina:'Testimoniales'
-    });
+const paginaTestimoniales = async (req,res)=>{ // req - lo que enviamos || res - lo que express nos responde
+    try {
+        const testimoniales = await Testimonial.findAll();
+        
+        
+        res.render('testimoniales',{
+            pagina:'Testimoniales',
+            testimoniales
+        });
+    } catch (error) {
+        console.log(error);
+    }
+    
+    
 }
+
+// muestra un viaje por su slug
+const paginaDetalleViaje = async(req, res) => {
+    const {slug} = req.params;
+
+    try {
+        const viaje = await Viaje.findOne({where : {slug}});
+        res.render('viaje',{
+            pagina:'Información Viaje',
+            viaje
+        });
+    } catch (error) {
+        console.log(error);
+    }
+}
+ 
 
 export {
     paginaInicio,
     paginaNosotros,
     paginaViajes,
-    paginaTestimoniales
+    paginaTestimoniales,
+    paginaDetalleViaje
 }

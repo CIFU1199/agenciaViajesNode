@@ -23,6 +23,8 @@ app.use((req,res, next)=>{
     res.locals.nombreSitio = 'Agencia de Viajes'; 
     next();
 });
+//agregar body parser para leer los datos del formulario
+app.use(express.urlencoded({extended: true}));
 
 
 //definir la carpeta publica 
